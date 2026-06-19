@@ -6,6 +6,7 @@ import cors from '@fastify/cors'
 // importação das rotas de usuario
 
 import usersRoutes from './routes/users.routes.js';
+import authRoute from './routes/auth.routes.js';
 
 
 
@@ -21,6 +22,10 @@ await fastify.register(cors, {
 await fastify.register(usersRoutes, {
   prefix: "/users"
 });
+
+await fastify.register(authRoute, {
+  prefix: "/users"
+})
 
 
 // Declare a route
